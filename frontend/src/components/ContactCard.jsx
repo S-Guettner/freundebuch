@@ -24,9 +24,9 @@ const ContactCard = ({id,setRenderTrigger,firstName,lastName,birthDate,mobileNum
                 <p>{mobileNumber}</p>
                 <p>{emailAdress}</p>
                 <p>{job}</p>
-                <p>{salary}</p>
-                <p>{selfEmployed}</p>
-                <p>{customer}</p>
+                <p>{salary}€</p>
+                <p>{selfEmployed === true ? "Self-employed" : "not Self-employed"}</p>
+                <p>{customer === true ? "customer" : "Not a customer"}</p>
             </div>
             <button className="border-2 p-1 rounded-xl mt-2 hover:bg-red-600 hover:text-white" onClick={deleteClickHandler}>Delete</button>
         </Link>
