@@ -25,7 +25,6 @@ app.use(cors(
 
 
 /* route to create new contact */
-
 app.post('/api/v1/new-contact' , async (req,res) => {
     try {
         const data = await contactModel.create(req.body)
@@ -36,7 +35,16 @@ app.post('/api/v1/new-contact' , async (req,res) => {
     }
 })
 
-
+/* route to get contacts */
+app.get('/api/v1/contacts' , async (req,res) => {
+    try {
+        const data = await contactModel.find()
+        res.status(200).json(data)
+    } catch (err) {
+        console.log(err.message)
+        res.status(500).json({message: err.message})
+    }
+})
 
 
 
