@@ -1,7 +1,17 @@
-const ContactCard = ({id,firstName,lastName,birthDate,mobileNumber,emailAdress,job,salary,selfEmployed,customer}) => {
+const ContactCard = ({id,setRenderTrigger,firstName,lastName,birthDate,mobileNumber,emailAdress,job,salary,selfEmployed,customer}) => {
     
-    const deleteClickHandler = (id) => {
-        fetch('')
+    const deleteClickHandler = () => {
+        fetch('http://localhost:9999/api/v1/contacts' , {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify
+            (
+                {
+                    "id":id
+                }
+            )
+        }
+        ).then(() => setRenderTrigger(prev => !prev))
     }
     
     return ( 
@@ -17,7 +27,7 @@ const ContactCard = ({id,firstName,lastName,birthDate,mobileNumber,emailAdress,j
                 <p>{selfEmployed}</p>
                 <p>{customer}</p>
             </div>
-            <button></button>
+            <button onClick={deleteClickHandler}>Delete</button>
         </div>
          )
 }

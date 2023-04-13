@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 const Home = () => {
 
     const [contacts,setContacts] = useState([])
+    const [renderTrigger,setRenderTrigger] = useState(false)
 
     useEffect(() => {
         fetch('http://localhost:9999/api/v1/contacts')
@@ -13,7 +14,7 @@ const Home = () => {
             console.log(data)
             setContacts(data)
         })
-    },[])
+    },[renderTrigger])
 
 
     return ( 
@@ -25,6 +26,7 @@ const Home = () => {
                     return(
                         <ContactCard 
                         key={uuidv4()}
+                        setRenderTrigger={setRenderTrigger}
                         id={contact._id}
                         firstName={contact.firstName}
                         lastName={contact.lastName}
