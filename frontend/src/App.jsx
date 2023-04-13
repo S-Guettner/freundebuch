@@ -1,11 +1,20 @@
-
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Home from './pages/Home'
+import Details from './pages/Details'
+import NewContact from './pages/NewContact'
 
 function App() {
 
   return (
-    <div className="App">
-        
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/details' element={<Details />} />
+          <Route path='/new-contact' element={<NewContact />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 
