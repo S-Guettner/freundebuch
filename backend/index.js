@@ -49,7 +49,7 @@ app.get('/api/v1/contacts' , async (req,res) => {
 /* route to delete contact */
 app.delete('/api/v1/contacts' , async (req,res) => {
     try {
-        const data = await contactModel.findByIdAndDelete(req.body)
+        const data = await contactModel.findByIdAndDelete(req.body.id)
         res.status(200).json(data)
     } catch (err) {
         console.log(err.message)
