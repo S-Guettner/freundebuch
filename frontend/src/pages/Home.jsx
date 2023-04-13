@@ -64,9 +64,9 @@ const Home = () => {
         <main>
             <h1 className="text-center text-4xl m-4">Contacts</h1>
             <div>
-                <p>Sort:</p>
-                <div>
-                    <div className="m-2 inline">
+                <p className="m-2">Sort:</p>
+                <div className="mb-4">
+                    <div className="m-2">
                     <label className="mr-2" htmlFor="ascending">Ascending</label>
                     <input onChange={(e) => setSort(e.target.value)} type="radio" name="sort" id="ascending" value="ascending" defaultChecked />
                     </div>
@@ -78,6 +78,7 @@ const Home = () => {
 
                 </div>
 
+                <p className="m-2">Sort by:</p>
                 <div>
                     <div className="m-2">
                     <label className="mr-2" htmlFor="salary">salary</label>
@@ -118,7 +119,12 @@ const Home = () => {
                     )
                 })}
             </section>
-                <Link className="text-center block border-2 mx-96 p-2 rounded-xl hover:bg-cyan-950 hover:text-white" to={'/new-contact'}>Create new Contact</Link>
+                <Link className="text-center block border-2 mx-96 p-2 rounded-xl hover:bg-cyan-950 hover:text-white" to={'/new-contact'}>
+                    <div className="flex items-center justify-center">
+                    <p className="inline mx-10">New Contact</p>
+                    <svg className="" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg>
+                    </div>
+                </Link>
         </main>
      )
 }
