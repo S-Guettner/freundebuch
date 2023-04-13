@@ -23,7 +23,7 @@ const NewContact = () => {
     
     
     const clickHandler = () => {
-        fetch(`http://localhost:9999/api/v1/new-contact` , {
+        fetch(`https://freundebuch.vercel.app/api/v1/new-contact` , {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify

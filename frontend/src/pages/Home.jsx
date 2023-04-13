@@ -13,7 +13,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:9999/api/v1/contacts')
+        fetch('https://freundebuch.vercel.app/api/v1/contacts')
         .then(res => res.json())
         .then(data => {
             

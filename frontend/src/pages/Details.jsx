@@ -9,7 +9,7 @@ const Details = () => {
     const [contact,setContact] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:9999/api/v1/contacts-details` , {
+        fetch(`https://freundebuch.vercel.app/api/v1/contacts-details` , {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify
