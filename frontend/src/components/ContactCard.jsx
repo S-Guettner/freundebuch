@@ -17,7 +17,7 @@ const ContactCard = ({id,setRenderTrigger,firstName,lastName,birthDate,mobileNum
     }
     
     return ( 
-        <Link className="border-2 p-2 w-44" to={`/details/${id}`}>
+        <Link className="border-2 p-2 w-44 hover:bg-slate-100" to={`/details/${id}`}>
             <div>
                 <p>{firstName + " " + lastName}</p>
                 <p>{birthDate}</p>
