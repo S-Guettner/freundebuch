@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
-import contactModel from './models/contactModel.js'
+import contactModel from './contactModel.js'
 import './env_config.js'
 
 /* environment varaibles */
