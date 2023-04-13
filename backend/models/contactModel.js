@@ -13,12 +13,12 @@ const contactSchema = mongoose.Schema(
         },
 
         birthDate: {
-            type: Number,
+            type: String,
             require: true
         },
 
         mobileNumber: {
-            type: Number,
+            type: String,
             require: true
         }, 
 
@@ -28,12 +28,12 @@ const contactSchema = mongoose.Schema(
         },
 
         job: {
-            type: Boolean,
+            type: String,
             require: true
         },
 
         salary: {
-            type: Number,
+            type: String,
             require: true
         },
 

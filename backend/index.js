@@ -16,7 +16,10 @@ app.use(express.json())
 app.use(cors(
     {
         origin: '*',
-        methods:['GET','POST']
+        methods:['GET','POST'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        preflightContinue: false,
+        optionsSuccessStatus: 200
     }
 ))
 
