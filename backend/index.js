@@ -16,7 +16,7 @@ app.use(express.json())
 app.use(cors(
     {
         origin: '*',
-        methods:['GET','POST'],
+        methods:['GET','POST','DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization'],
         preflightContinue: false,
         optionsSuccessStatus: 200
@@ -46,6 +46,16 @@ app.get('/api/v1/contacts' , async (req,res) => {
     }
 })
 
+/* route to delete contact */
+app.delete('/api/v1/contacts' , async (req,res) => {
+    try {
+        const data = await contactModel.findByIdAndDelete(req.body)
+        res.status(200).json(data)
+    } catch (err) {
+        console.log(err.message)
+        res.status(500).json({message: err.message})
+    }
+})
 
 
 
