@@ -15,7 +15,7 @@ app.use(express.json())
 /* cors setup */
 app.use(cors(
     {
-        origin: '*',
+        origin: 'https://freundebuch-frontend.vercel.app',
         methods:['GET','POST','DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization'],
         preflightContinue: false,
