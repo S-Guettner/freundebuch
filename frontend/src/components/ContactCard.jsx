@@ -17,7 +17,8 @@ const ContactCard = ({id,setRenderTrigger,firstName,lastName,birthDate,mobileNum
     }
     
     return ( 
-        <Link className="border-2 p-2 w-44 hover:bg-slate-100" to={`/details/${id}`}>
+        <div className="border-2 p-2 w-44 hover:bg-slate-100" >
+        <Link to={`/details/${id}`}>
             <div>
                 <p>{firstName + " " + lastName}</p>
                 <p>{birthDate}</p>
@@ -28,8 +29,9 @@ const ContactCard = ({id,setRenderTrigger,firstName,lastName,birthDate,mobileNum
                 <p>{selfEmployed === true ? "Self-employed" : "not Self-employed"}</p>
                 <p>{customer === true ? "customer" : "Not a customer"}</p>
             </div>
-            <button className="border-2 p-1 rounded-xl mt-2 hover:bg-red-600 hover:text-white" onClick={deleteClickHandler}>Delete</button>
         </Link>
+            <button className="border-2 p-1 rounded-xl mt-2 hover:bg-red-600 hover:text-white" onClick={deleteClickHandler}>Delete</button>
+        </div>
          )
 }
  

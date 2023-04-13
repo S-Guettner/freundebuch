@@ -81,6 +81,11 @@ const Home = () => {
                 </div>
 
                 <div>
+                    <div className="m-2">
+                    <label className="mr-2" htmlFor="salary">salary</label>
+                    <input onChange={(e) => setSortBy(e.target.value)} type="radio" name="sortItem" id="salary" value="salary" defaultChecked />
+                    </div>
+                    
                     <div className="m-2 block">
                     <label className="mr-2" htmlFor="firstName">First Name</label>
                     <input onChange={(e) => setSortBy(e.target.value)} type="radio" name="sortItem" id="firstName" value="firstName" />
@@ -91,10 +96,6 @@ const Home = () => {
                     <input onChange={(e) => setSortBy(e.target.value)} type="radio" name="sortItem" id="lastName" value="lastName" />
                     </div>
                     
-                    <div className="m-2">
-                    <label className="mr-2" htmlFor="salary">salary</label>
-                    <input onChange={(e) => setSortBy(e.target.value)} type="radio" name="sortItem" id="salary" value="salary" defaultChecked />
-                    </div>
                 </div>
 
             </div>

@@ -60,16 +60,16 @@ const NewContact = () => {
                 onChange={(e) => setbirthDate(e.target.value)} type="date" name="" id="" placeholder=''/>
                 <input 
                 className='border-2 m-2 text-center block w-full'
-                onChange={(e) => setMobileNumber(e.target.value)} placeholder='mobileNumber' type="text" />
+                onChange={(e) => setMobileNumber((e.target.value).toString())} placeholder='mobileNumber' type="number" />
                 <input 
                 className='border-2 m-2 text-center block w-full'
-                onChange={(e) => setEmailAdress(e.target.value)} placeholder='emailAdress' type="text" />
+                onChange={(e) => setEmailAdress(e.target.value)} placeholder='emailAdress' type="email" />
                 <input 
                 className='border-2 m-2 text-center block w-full'
                 onChange={(e) => setJob(e.target.value)} placeholder='job' type="text" />
                 <input 
                 className='border-2 m-2 text-center block w-full'
-                onChange={(e) => setSalary(e.target.value)} placeholder='salary' type="text" />
+                onChange={(e) => setSalary((e.target.value).toString())} placeholder='salary' type="number" />
                 <div className='text-[#9ca3af]'>
                     <p>self employed ?</p>
                     <label htmlFor="selfEmployedTrue">True</label>
@@ -89,13 +89,13 @@ const NewContact = () => {
                     onChange={(e) => setCustomer(e.target.value === "false" ? false : "" )} id='customerFalse' type="radio" name="customer" value="false" defaultChecked/>
                 </div>
                 <button className='hover:bg-zinc-200 hover:text-black border-2 p-2 mb-24 rounded-md m-2 text-center block w-full text-[#9ca3af]' onClick={clickHandler} >Create new Contact
-                <svg className='inline m-2' stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M696 480H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z"></path><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path></svg>
+                <svg className='inline m-2' stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M696 480H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z"></path><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path></svg>
                 </button>
 
 
                 
                 <Link className='border-2 rounded-xl p-2 hover:bg-neutral-300' to={'/'}>
-                <svg className='inline' stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 0 0 0 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg>
+                <svg className='inline' stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 0 0 0 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg>
                 <p className='inline ml-2'>Back to Contact overview</p>
                 </Link>
             </form>
