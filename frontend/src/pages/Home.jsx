@@ -11,8 +11,6 @@ const Home = () => {
     const [sort,setSort] = useState("ascending")
     const [sortBy,setSortBy] = useState("salary")
 
-  
-    console.log(sortBy)
 
     useEffect(() => {
         fetch('http://localhost:9999/api/v1/contacts')
@@ -85,7 +83,7 @@ const Home = () => {
                     <label className="mr-2" htmlFor="salary">salary</label>
                     <input onChange={(e) => setSortBy(e.target.value)} type="radio" name="sortItem" id="salary" value="salary" defaultChecked />
                     </div>
-                    
+
                     <div className="m-2 block">
                     <label className="mr-2" htmlFor="firstName">First Name</label>
                     <input onChange={(e) => setSortBy(e.target.value)} type="radio" name="sortItem" id="firstName" value="firstName" />
