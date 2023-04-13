@@ -4,37 +4,44 @@ const contactSchema = mongoose.Schema(
     {
         firstName: {
             type: String,
-            require: true
+            require: true,
+            minLength: 1
         },
 
         lastName: {
             type: String,
-            require: true
+            require: true,
+            minLength: 1
         },
 
         birthDate: {
             type: String,
-            require: true
+            require: true,
+            minLength: 1
         },
 
         mobileNumber: {
             type: String,
-            require: true
+            require: true,
+            minLength: 1
         }, 
 
         emailAdress: {
             type: String,
-            require: true
+            require: true,
+            minLength: 1
         },
 
         job: {
             type: String,
-            require: true
+            require: true,
+            minLength: 1
         },
 
         salary: {
             type: String,
-            require: true
+            require: true,
+            minLength: 1
         },
 
         selfEmployed: {
