@@ -24,17 +24,6 @@ app.use(cors(
 ))
 
 
-/* route to create new contact */
-app.post('/api/v1/new-contact' , async (req,res) => {
-    try {
-        const data = await contactModel.create(req.body)
-        res.status(200).json(data)
-    } catch (err) {
-        console.log(req.body)
-        console.log(err.message)
-        res.status(500).json({message: err.message})
-    }
-})
 
 /* route to get contacts */
 app.get('/api/v1/contacts' , async (req,res) => {
@@ -42,6 +31,18 @@ app.get('/api/v1/contacts' , async (req,res) => {
         const data = await contactModel.find()
         res.status(200).json(data)
     } catch (err) {
+        console.log(err.message)
+        res.status(500).json({message: err.message})
+    }
+})
+
+/* route to create new contact */
+app.post('/api/v1/new-contact' , async (req,res) => {
+    try {
+        const data = await contactModel.create(req.body)
+        res.status(200).json(data)
+    } catch (err) {
+        console.log(req.body)
         console.log(err.message)
         res.status(500).json({message: err.message})
     }
@@ -58,7 +59,16 @@ app.delete('/api/v1/contacts' , async (req,res) => {
     }
 })
 
-
+/* route to get contacts by id */
+app.post('/api/v1/contacts-details' , async (req,res) => {
+    try {
+        const data = await contactModel.findById(req.body.id)
+        res.status(200).json(data)
+    } catch (err) {
+        console.log(err.message)
+        res.status(500).json({message: err.message})
+    }
+})
 
 
 
