@@ -1,20 +1,37 @@
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
+import contactModel from './models/contactModel.js'
 import './env_config.js'
 
 /* environment varaibles */
 const DB_CONNECTION = process.env.DB_CONNECTION
 const PORT_SERVER = process.env.PORT_SERVER
+
 /* express setup */
 const app = express()
 /* body parser */
 app.use(express.json())
+/* cors setup */
+app.use(cors(
+    {
+        origin: '*',
+        methods:['GET','POST']
+    }
+))
 
 
+/* route to create new contact */
 
-
-
+app.post('/api/v1/new-contact' , async (req,res) => {
+    try {
+        const data = await contactModel.create(req.body)
+        res.status(200).json(data)
+    } catch (err) {
+        console.log(error.message)
+        res.status(500).json({message: error.message})
+    }
+})
 
 
 
