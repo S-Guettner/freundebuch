@@ -17,10 +17,9 @@ const ContactCard = ({id,setRenderTrigger,firstName,lastName,birthDate,mobileNum
     }
     
     return ( 
-        <Link to={`/details/${id}`}>
+        <Link className="border-2 p-2 w-44" to={`/details/${id}`}>
             <div>
-                <p>{firstName}</p>
-                <p>{lastName}</p>
+                <p>{firstName + " " + lastName}</p>
                 <p>{birthDate}</p>
                 <p>{mobileNumber}</p>
                 <p>{emailAdress}</p>
@@ -29,7 +28,7 @@ const ContactCard = ({id,setRenderTrigger,firstName,lastName,birthDate,mobileNum
                 <p>{selfEmployed}</p>
                 <p>{customer}</p>
             </div>
-            <button onClick={deleteClickHandler}>Delete</button>
+            <button className="border-2 p-1 rounded-xl mt-2 hover:bg-red-600 hover:text-white" onClick={deleteClickHandler}>Delete</button>
         </Link>
          )
 }

@@ -1,6 +1,7 @@
 import { useState,useEffect} from "react"
 import ContactCard from "../components/ContactCard"
 import { v4 as uuidv4 } from 'uuid'
+import { Link } from "react-router-dom"
 
 const Home = () => {
 
@@ -19,8 +20,8 @@ const Home = () => {
 
     return ( 
         <main>
-            <h1>Contacts</h1>
-            <section>
+            <h1 className="text-center text-4xl m-4">Contacts</h1>
+            <section className="flex justify-center gap-5 flex-wrap mb-28">
                 {contacts?.map((contact) => {
                     console.log(contact)
                     return(
@@ -41,6 +42,7 @@ const Home = () => {
                     )
                 })}
             </section>
+                <Link className="text-center block border-2 mx-96 p-2 rounded-xl hover:bg-cyan-950 hover:text-white" to={'/new-contact'}>Create new Contact</Link>
         </main>
      )
 }
