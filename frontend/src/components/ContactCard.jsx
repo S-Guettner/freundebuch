@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const ContactCard = ({id,setRenderTrigger,firstName,lastName,birthDate,mobileNumber,emailAdress,job,salary,selfEmployed,customer}) => {
     
     const deleteClickHandler = () => {
@@ -15,7 +17,7 @@ const ContactCard = ({id,setRenderTrigger,firstName,lastName,birthDate,mobileNum
     }
     
     return ( 
-        <div>
+        <Link to={`/details/${id}`}>
             <div>
                 <p>{firstName}</p>
                 <p>{lastName}</p>
@@ -28,7 +30,7 @@ const ContactCard = ({id,setRenderTrigger,firstName,lastName,birthDate,mobileNum
                 <p>{customer}</p>
             </div>
             <button onClick={deleteClickHandler}>Delete</button>
-        </div>
+        </Link>
          )
 }
  
