@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const ContactCard = ({id,setRenderTrigger,firstName,lastName,birthDate,mobileNumber,emailAdress,job,salary,selfEmployed,customer}) => {
     
     const deleteClickHandler = () => {
-        fetch('http://localhost:9999/api/v1/contacts' , {
+        fetch('https://freundebuch.vercel.app/api/v1/contacts' , {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify
