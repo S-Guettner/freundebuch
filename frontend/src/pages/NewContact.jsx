@@ -10,13 +10,13 @@ const NewContact = () => {
     const emailAdress = useRef()
     const job = useRef()
     const salary = useRef()
-    const selfEmployed = useRef()
+    
 
-    /* const [selfEmployed,setSelfEmployed] = useState
-    const [customer,setCustomer] = useState */
+    const [selfEmployed,setSelfEmployed] = useState(false)
+    const [customer,setCustomer] = useState(false)
 
 
-    const test = useRef()
+    
   
 
     /* changing date from yyyy/mm/dd to dd/mm/yyyy */
@@ -40,8 +40,8 @@ const NewContact = () => {
                     "emailAdress":emailAdress.current.value,
                     "job":job.current.value,
                     "salary":salary.current.value,
-                    "selfEmployed":selfEmployed.current.value,
-                    "customer":customer.current.value
+                    "selfEmployed":selfEmployed,
+                    "customer":customer
                 }
             )
         })
@@ -52,7 +52,7 @@ const NewContact = () => {
     return ( 
         <main className='flex justify-center items-center h-screen'>
             <button onClick={() => console.log(selfEmployed.current.value)}>TEST BUTTON</button>
-            <form className='w-80 text-center'>
+            <form className='w-80 text-center' >
                 <h1 className='text-4xl mb-4'>New Contact</h1>
                 <input 
                 className='border-2 m-2 text-center block w-full'
@@ -79,19 +79,19 @@ const NewContact = () => {
                     <p>self employed ?</p>
                     <label htmlFor="selfEmployedTrue">True</label>
                     <input className='cursor-pointer m-4' 
-                    ref={selfEmployed} id='selfEmployedTrue' type="radio" name="selfEmployed" value="true"/>
+                    onChange={(e) => setSelfEmployed((e.target.value) === "true" ? true : "" )} id='selfEmployedTrue' type="radio" name="selfEmployed" value="true"/>
                     <label htmlFor="selfEmployedFalse">False</label>
                     <input className='cursor-pointer m-4' 
-                    ref={selfEmployed}id='selfEmployedFalse' type="radio" name="selfEmployed" value="false" defaultChecked/>
+                    onChange={(e) => setSelfEmployed((e.target.value) === "false" ? false : "")} id='selfEmployedFalse' type="radio" name="selfEmployed" value="false" defaultChecked/>
                 </div>
                 <div className='text-[#9ca3af]'>
                     <p>customer?</p>
                     <label htmlFor="customerTrue">True</label>
                     <input className='cursor-pointer m-4' 
-                     id='customerTrue' type="radio" name="customer" value="true"/>
+                    onChange={(e) => setCustomer((e.target.value) === "true" ? true : "")} id='customerTrue' type="radio" name="customer" value="true"/>
                     <label htmlFor="customerFalse">False</label>
                     <input className='cursor-pointer m-4' 
-                     id='customerFalse' type="radio" name="customer" value="false" defaultChecked/>
+                    onChange={(e) => setCustomer((e.target.value) === "false" ? false : "")} id='customerFalse' type="radio" name="customer" value="false" defaultChecked/>
                 </div>
                 <button className='hover:bg-zinc-200 hover:text-black border-2 p-2 mb-24 rounded-md m-2 text-center block w-full text-[#9ca3af]' onClick={clickHandler} >Create new Contact
                 <svg className='inline m-2' stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M696 480H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z"></path><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path></svg>
